@@ -1,0 +1,42 @@
+#inp{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+.inputlist{
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.radio {
+    display: flex;
+    flex-direction: column;
+    margin: 15px 0;
+    margin-left: 25%;
+  }
+  .radiob{
+    margin: 5px;
+  }
+  mat-card{
+    overflow: auto;
+    width: 50%;
+    max-height: 320px;
+  }
+  .badge {
+    top: 0;
+    left: 50%;
+    font-size: 12px;
+    line-height: 17px;
+    border-radius: 50%;
+    width: 15px;
+    height: 13px;
+    background-color: #ff0000; 
+    border: 4px solid #ff0000;
+    color: #ffffff;
+    text-align: center;
+  }
+  mat-card{
+    border-radius: 15px;
+  }

@@ -1,0 +1,12 @@
+.listcard
+{
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 15px;
+    max-height: 300px;
+    overflow: auto;
+}
+mat-card
+{
+    border-radius: 15px;
+}

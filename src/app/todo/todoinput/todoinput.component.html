@@ -1,0 +1,53 @@
+<div class="inputlist">
+    <mat-grid-list cols=3>
+        <mat-grid-tile [rowspan]="1" class="tile">
+                <mat-card [class.mat-elevation-z8]='true' class="new" cdkDrag>
+                    <mat-card-header>
+                        <h3>New List</h3>
+                    </mat-card-header>
+                    <mat-card-content class="card">
+                        <mat-form-field id="inp">
+                            <input matInput placeholder="Enter New List Name" type="text" [(ngModel)]="newlistname">
+                        </mat-form-field>
+                        <button mat-raised-button [class.mat-elevation-z4]='true' color="primary" (click)="addList();newlistname=''">Add New List</button>
+                    </mat-card-content>
+                </mat-card>
+            </mat-grid-tile>
+    <mat-grid-tile [rowspan]="1" class="tile">
+    <mat-card [class.mat-elevation-z8]='true' class="insert" cdkDrag>
+        <mat-card-header>
+            <h3>Insert : </h3>
+        </mat-card-header>
+        <mat-card-content class="card">
+                <mat-form-field id="inp">
+                    <input matInput placeholder="Enter Item To List" type="text" [(ngModel)]="str">
+                </mat-form-field>
+
+                <label><h4>Pick List For The Item</h4></label>
+                <mat-radio-group class="radio" [(ngModel)]="itemtype">
+                    <mat-radio-button  class="radiob" value="General" name="type" checked>General <span class="badge" *ngIf="data.gitems.length > 0">{{data.gitems.length}}</span></mat-radio-button>
+                    <mat-radio-button class="radiob" value="Priority" name="type" >Priority <span class="badge" *ngIf="data.pitems.length > 0">{{data.pitems.length}}</span></mat-radio-button>
+                    <mat-radio-button class="radiob" value="Later" name="type" >Later <span class="badge" *ngIf="data.litems.length > 0">{{data.litems.length}}</span></mat-radio-button>
+                    <mat-radio-button class="radiob" [@fadein] *ngFor="let nameoflist of data.OtherListitem;let i=index " [value]="nameoflist.listName"> {{nameoflist.listName}}<span class="badge" *ngIf="data.OtherListitem[i].items.length > 0">{{data.OtherListitem[i].items.length}}</span></mat-radio-button>
+                </mat-radio-group>
+                <button class="buttonadd" mat-raised-button [class.mat-elevation-z4]='true' color="accent" (click)="add();str=''">Add To ToDO</button>
+        </mat-card-content>
+    </mat-card>
+    </mat-grid-tile>
+    <mat-grid-tile [rowspan]="1" class="tile">
+            <mat-card [class.mat-elevation-z8]='true' class="del" cdkDrag>
+                <mat-card-header>
+                    <h3>Delete List</h3>
+                </mat-card-header>
+                <mat-card-content class="card">
+                    <mat-form-field id="inp">
+                        <input matInput placeholder="Enter List To Delete" type="text" [(ngModel)]="dellist">
+                    </mat-form-field>
+                    <button mat-raised-button [class.mat-elevation-z4]='true' class="delbtn" (click)="delList(dellist);dellist=''">Delete List</button>
+                </mat-card-content>
+            </mat-card>
+        </mat-grid-tile>
+</mat-grid-list>
+
+</div>
+
